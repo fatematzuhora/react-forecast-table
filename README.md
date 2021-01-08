@@ -1,4 +1,10 @@
 # react-forecast-table
+An interactive web app to visualize Women's World Cup (2019) Data, made with React & TypeScript.
+
+### Live URL
+`react-forecast-table` is running as a website hosted on
+
+👉 [https://react-forecast-table-fatematzuhora.netlify.app/](https://react-forecast-table-fatematzuhora.netlify.app/)
 
 ## Quick Start (Option #1)
 * Clone the repo:
@@ -33,17 +39,6 @@ Now you can see the following message on your terminal:
 
 This means the docker image has built successfully.
 
-* Run the docker image:
-```
-sudo docker run -it -p 3000:3000 fatematzuhora/react-forecast-table
-```
-
-## Pull from [Docker Hub](https://hub.docker.com/r/fatematzuhora/react-forecast-table) (Option #3)
-
-* Simply just pull the docker image from the docker hub:
-```
-sudo docker pull fatematzuhora/react-forecast-table
-```
 * Run the docker image:
 ```
 sudo docker run -it -p 3000:3000 fatematzuhora/react-forecast-table
