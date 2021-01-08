@@ -1,0 +1,34 @@
+table {
+    width: 70%;
+    border-spacing: 0;
+    border-collapse: 0;
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 300;
+
+    .col-header {
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 0 .5rem;
+        border-bottom: 2px solid #e6e6e6;
+    }
+
+    tr {
+        cursor: pointer;
+        &:hover {
+            background-color: #e6e6e6;
+        }
+    }
+
+    th,
+    td {
+        margin: 0;
+        padding: 0.5rem;
+    }
+
+    th:hover {
+        background-color: #bfbfbf;
+    }
+}
