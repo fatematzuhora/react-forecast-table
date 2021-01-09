@@ -43,3 +43,16 @@ This means the docker image has built successfully.
 ```
 sudo docker run -it -p 3000:3000 fatematzuhora/react-forecast-table
 ```
+
+## Pull from [Docker Hub](https://hub.docker.com/r/fatematzuhora/react-forecast-table) (Option #3)
+
+* Simply just pull the docker image from the docker hub:
+```
+docker pull fatematzuhora/react-forecast-table
+```
+* Run the docker image:
+```
+sudo docker run -it -p 3000:3000 fatematzuhora/react-forecast-table
+```
+
+**Now go to the browser and browse http://localhost:3000**
