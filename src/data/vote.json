@@ -1,0 +1,79 @@
+{
+    "data": [
+        {
+            "state": "Alaska",
+            "votes": 318608,
+            "perc": 51.3
+        },
+        {
+            "state": "Arizona",
+            "votes": 2573165,
+            "perc": 48.7
+        },
+        {
+            "state": "California",
+            "votes": 14181595,
+            "perc": 31.6
+        },
+        {
+            "state": "Florida",
+            "votes": 9420039,
+            "perc": 49.0
+        },
+        {
+            "state": "Georgia",
+            "votes": 4114732,
+            "perc": 50.8
+        },
+        {
+            "state": "Hawaii",
+            "votes": 437664,
+            "perc": 29.4
+        },
+        {
+            "state": "Louisiana",
+            "votes": 2029032,
+            "perc": 58.1
+        },
+        {
+            "state": "Massachusetts",
+            "votes": 3378821,
+            "perc": 32.3
+        },
+        {
+            "state": "Mississippi",
+            "votes": 1209357,
+            "perc": 57.9
+        },
+        {
+            "state": "Nebraska",
+            "votes": 844227,
+            "perc": 58.7
+        },
+        {
+            "state": "Tennessee",
+            "votes": 2508027,
+            "perc": 60.7
+        },
+        {
+            "state": "Virginia",
+            "votes": 312167,
+            "perc": 34.3
+        },
+        {
+            "state": "Washington",
+            "votes": 3317019,
+            "perc": 36.8
+        },
+        {
+            "state": "Wisconsin",
+            "votes": 318618,
+            "perc": 31.3
+        },
+        {
+            "state": "Wyoming",
+            "votes": 218608,
+            "perc": 24.3
+        }
+    ]
+}

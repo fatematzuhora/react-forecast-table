@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTable, useSortBy } from 'react-table';
-import BarChart from 'components/BarChart';
-import { data } from 'data/forecasts.json';
+import BarChart from 'components/chart/BarChart';
+import { data } from 'data/worldcup.json';
 import './table.scss';
 
 const toPercentage = (num: number) => {
@@ -44,7 +44,7 @@ const round16 = (num: number) => {
     }
 }
 
-function Table() {
+function WorldCupTable() {
     const [country, setCountry] = useState<string | null>('');
     const [chartData, setChartData] = useState<Array<number> | []>([]);
     
@@ -60,11 +60,6 @@ function Table() {
                     {
                         Header: 'TEAM',
                         accessor: 'team',
-                    },
-                    {
-                        Header: '',
-                        accessor: 'points',
-                        Cell: (props: any) => `${props.value}pts.`
                     },
                     {
                         Header: 'GROUP',
@@ -93,26 +88,6 @@ function Table() {
                 ],
             },
             {
-                Header: 'AVG. SIMULATED SEASON',
-                columns: [
-                    {
-                        Header: '1ST PLACE',
-                        accessor: 'group_1',
-                        Cell: (props: any) => toPercentage(props.value),
-                    },
-                    {
-                        Header: '2ND PLACE',
-                        accessor: 'group_2',
-                        Cell: (props: any) => toPercentage(props.value),
-                    },
-                    {
-                        Header: '3RD PLACE',
-                        accessor: 'group_3',
-                        Cell: (props: any) => toPercentage(props.value),
-                    },
-                ],
-            },
-            {
                 Header: 'KNOCKOUT STAGE CHANCES',
                 columns: [
                     {
@@ -121,18 +96,13 @@ function Table() {
                         Cell: (props: any) => round16(props.value)
                     },
                     {
-                        Header: 'MAKE QTR-FINALS',
+                        Header: 'MAKE QTR - FINALS',
                         accessor: 'make_quarters',
                         Cell: (props: any) => toPercentage(props.value)
                     },
                     {
                         Header: 'MAKE SEMIFINALS',
                         accessor: 'make_semis',
-                        Cell: (props: any) => toPercentage(props.value),
-                    },
-                    {
-                        Header: 'MAKE FINAL',
-                        accessor: 'make_final',
                         Cell: (props: any) => toPercentage(props.value),
                     },
                     {
@@ -220,4 +190,4 @@ function Table() {
     )
 }
 
-export default Table;
+export default WorldCupTable;

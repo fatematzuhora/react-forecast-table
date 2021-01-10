@@ -1,11 +1,13 @@
 import React from 'react';
-import Table from 'components/Table';
+import {
+  WorldCupTable
+} from 'components';
 import 'app.scss';
 
 function App() {
   return (
     <div className="landing-page">
-      <Table />
+      <WorldCupTable />
     </div>
   );
 }
