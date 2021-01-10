@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useTable, useSortBy } from 'react-table';
-import BarChart from 'components/chart/BarChart';
 import { data } from 'data/worldcup.json';
 import './table.scss';
 
@@ -78,12 +77,34 @@ function WorldCupTable() {
                     {
                         Header: 'OFF.',
                         accessor: 'global_o',
-                        Cell: (props: any) => `${Math.round(props.value * 10) / 10}`,
+                        Cell: (props: any) => {
+                            return (
+                                <div
+                                    style={{backgroundColor: `rgb(68, 171, 67, ${Math.round(props.value)/10})`}}
+                                    className="spi_rating"
+                                >
+                                    <span className="spi_rating-content">
+                                        {Math.round(props.value * 10) / 10}
+                                    </span>
+                                </div>
+                            )
+                        }
                     },
                     {
                         Header: 'DEF.',
                         accessor: 'global_d',
-                        Cell: (props: any) => `${Math.round(props.value * 10) / 10}`,
+                        Cell: (props: any) => {
+                            return (
+                                <div
+                                    style={{backgroundColor: `rgb(255, 39, 0, ${props.value})`}}
+                                    className="spi_rating"
+                                >
+                                    <span className="spi_rating-content">
+                                        {Math.round(props.value * 10) / 10}
+                                    </span>
+                                </div>
+                            )
+                        }
                     },
                 ],
             },
@@ -91,14 +112,32 @@ function WorldCupTable() {
                 Header: 'KNOCKOUT STAGE CHANCES',
                 columns: [
                     {
-                        Header: 'MAKE ROUND OF 16',
+                        Header: 'MAKE ROUND 16',
                         accessor: 'make_round_of_16',
-                        Cell: (props: any) => round16(props.value)
+                        Cell: (props: any) => {
+                            return (
+                                <div
+                                    style={{backgroundColor: `rgb(54, 176, 171, ${props.value})`}}
+                                    className="round_16"
+                                >
+                                    {round16(props.value)}
+                                </div>
+                            )
+                        }
                     },
                     {
                         Header: 'MAKE QTR - FINALS',
                         accessor: 'make_quarters',
-                        Cell: (props: any) => toPercentage(props.value)
+                        Cell: (props: any) => {
+                            return (
+                                <div
+                                    style={{backgroundColor: `rgb(169, 221, 174, ${props.value})`}}
+                                    className="round_16"
+                                >
+                                    {toPercentage(props.value)}
+                                </div>
+                            )
+                        }
                     },
                     {
                         Header: 'MAKE SEMIFINALS',
@@ -129,8 +168,8 @@ function WorldCupTable() {
 
     return (
         <>
-            <table {...getTableProps()}>
-                <thead className="">
+            <table {...getTableProps()} className="worldcup-table">
+                <thead>
                     {headerGroups.map((headerGroup: any) => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
                             {headerGroup.headers.map((column: any) => (
@@ -140,7 +179,7 @@ function WorldCupTable() {
                                 >
                                     {column.render('Header')}
                                     <span>
-                                        {column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}
+                                        {column.isSorted ? (column.isSortedDesc ? "↑" : "↓") : ""}
                                     </span>
                                 </th>
                             ))}
@@ -148,7 +187,7 @@ function WorldCupTable() {
                     ))}
                 </thead>
 
-                <tbody {...getTableBodyProps()} className="forecast-table__body">
+                <tbody {...getTableBodyProps()} className="worldcup-table__body">
                     {rows.map((row: any) => {
                         prepareRow(row)
                         return (
@@ -182,10 +221,9 @@ function WorldCupTable() {
 
             </table>
         
-            <BarChart
-                country={country}
-                data={chartData}
-            />
+            <div className="left-chart worldcup">
+                
+            </div>
         </>
     )
 }

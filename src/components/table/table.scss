@@ -1,34 +1,126 @@
 table {
-    width: 32%;
+    text-align: center;
     border-spacing: 0;
     border-collapse: 0;
-    text-align: center;
-
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
 
     .col-header {
-        font-size: 15px;
+        font-size: 12px;
         font-weight: 700;
         text-transform: uppercase;
-        padding: 0 .5rem;
-        border-bottom: 2px solid #e6e6e6;
+        padding: .3rem .5rem;
     }
 
-    tr {
+    thead tr th:hover {
+        background-color: #e6e6e6;
+    }
+
+    tbody tr {
         cursor: pointer;
         &:hover {
-            background-color: #e6e6e6;
+            background-color: #efeaea82;
         }
     }
 
     th,
     td {
         margin: 0;
-        padding: 0.5rem;
     }
 
-    th:hover {
-        background-color: #bfbfbf;
+    th {
+        border-bottom: 2px solid #000000;
+    }
+}
+
+.worldcup-table {
+    width: 38%;
+    margin-right: 5px;
+
+    tr:first-child th {
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .spi_rating {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: auto;
+
+        &-content {
+            position: relative;
+            top: 7px;
+        }
+    }
+    .round_16 {
+        padding: 7px 0;
+    }
+}
+
+.twitter-table {
+    width: 25%;
+    text-align: left;
+    margin-right: 5px;
+    margin-top: 22px;
+
+    tr:first-child th {
+        height: 41px;
+        border-top: 2px solid #000000;
+    }
+
+    td {
+        padding: .6rem 0;
+        padding-right: .3rem;
+    }
+
+    .bar-cell {
+        display: flex;
+        align-items: center;
+    }
+        
+    .number {
+        font-size: 13.5px;
+        white-space: pre;
+    }
+        
+    .bar-chart {
+        flex-grow: 1;
+        margin-left: 6px;
+        height: 14px;
+    }
+        
+    .bar {
+        height: 100%;
+    }
+}
+
+.vote-table {
+    width: 18%;
+    margin-top: 22px;
+
+    tr:first-child th {
+        height: 41px;
+        border-top: 2px solid #000000;
+    }
+
+    td {
+        padding: .6rem 0;
+    }
+}
+
+.left-chart {
+    width: 18%;
+    position: absolute;
+    right: 0;
+
+    &.twitter {
+        top: 400px;
+
+        .bar-cell {
+            display: flex;
+            align-items: center;
+        }
     }
 }

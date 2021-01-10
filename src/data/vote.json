@@ -51,6 +51,11 @@
             "perc": 58.7
         },
         {
+            "state": "Pennsylvania",
+            "votes": 123233,
+            "perc": 34.3
+        },
+        {
             "state": "Tennessee",
             "votes": 2508027,
             "perc": 60.7

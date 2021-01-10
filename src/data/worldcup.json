@@ -359,6 +359,30 @@
       "make_final": 0.00614,
       "win_league": 0.00178,
       "points": 0
+    },
+    {
+      "forecast_timestamp": "2019-06-16 17:54:33 UTC",
+      "team": "Nigeria",
+      "group": "A",
+      "spi": 71.65054,
+      "global_o": 2.35033,
+      "global_d": 1.11681,
+      "sim_wins": 1.03435,
+      "sim_ties": 0.12907,
+      "sim_losses": 1.83658,
+      "sim_goal_diff": -2.97992,
+      "goals_scored": 2.27209,
+      "goals_against": 5.25201,
+      "group_1": 0.00002,
+      "group_2": 0.05077,
+      "group_3": 0.90873,
+      "group_4": 0.04048,
+      "make_round_of_16": 0.49519,
+      "make_quarters": 0.13261,
+      "make_semis": 0.02736,
+      "make_final": 0.00609,
+      "win_league": 0.00111,
+      "points": 3
     }
   ]
 }
