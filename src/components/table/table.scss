@@ -2,11 +2,11 @@ table {
     text-align: center;
     border-spacing: 0;
     border-collapse: 0;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 300;
 
     .col-header {
-        font-size: 12px;
+        font-size: 11.5px;
         font-weight: 700;
         text-transform: uppercase;
         padding: .3rem .5rem;
@@ -97,8 +97,9 @@ table {
 }
 
 .vote-table {
-    width: 18%;
+    width: 17%;
     margin-top: 22px;
+    margin-right: 5px;
 
     tr:first-child th {
         height: 41px;
@@ -111,16 +112,15 @@ table {
 }
 
 .left-chart {
-    width: 18%;
+    top: 120px;
     position: absolute;
     right: 0;
 
     &.twitter {
-        top: 400px;
+        top: 260px;
+    }
 
-        .bar-cell {
-            display: flex;
-            align-items: center;
-        }
+    &.vote {
+        top: 400px;
     }
 }

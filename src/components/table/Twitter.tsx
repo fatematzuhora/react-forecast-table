@@ -1,19 +1,10 @@
 import React, { useState } from 'react';
 import { useTable, useSortBy } from 'react-table';
+import { TwitterBarChart } from 'components';
 import { data } from 'data/twitter.json';
 
-const horizontalBarData = {
-    labels: ['s'],
-    datasets: [
-        {
-            backgroundColor: 'rgba(255,99,132,0.2)',
-            data: [10]
-        }
-    ]
-};
-
 function TwitterTable() {
-    const [country, setCountry] = useState<string | null>('');
+    const [username, setUsername] = useState<string | null>('');
     const [chartData, setChartData] = useState<Array<number> | []>([]);
 
     const columns: any = React.useMemo(
@@ -96,7 +87,14 @@ function TwitterTable() {
                             <tr
                                 {...row.getRowProps()}
                                 onMouseOver={() => {
+                                    let userData = row.values;
+                                    let arr: any[] = [
+                                        (userData.followers / 1000),
+                                        (userData.exclusive_followers_pct * 1000),
+                                    ];
                                     
+                                    setUsername(userData.account);
+                                    setChartData(arr);
                                 }}
                             >
                                 {row.cells.map((cell: any) => {
@@ -114,6 +112,7 @@ function TwitterTable() {
             </table>
 
             <div className="left-chart twitter">
+                <TwitterBarChart data={chartData} username={username} />
             </div>
         </>
     )

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTable, useSortBy } from 'react-table';
+import { WorldCupBarChart } from 'components';
 import { data } from 'data/worldcup.json';
 import './table.scss';
 
@@ -140,7 +141,7 @@ function WorldCupTable() {
                         }
                     },
                     {
-                        Header: 'MAKE SEMIFINALS',
+                        Header: 'MAKE SEMI FINALS',
                         accessor: 'make_semis',
                         Cell: (props: any) => toPercentage(props.value),
                     },
@@ -199,7 +200,6 @@ function WorldCupTable() {
                                         teamData.make_round_of_16,
                                         teamData.make_quarters,
                                         teamData.make_semis,
-                                        teamData.make_final,
                                         teamData.win_league,
                                     ];
                                     
@@ -222,7 +222,10 @@ function WorldCupTable() {
             </table>
         
             <div className="left-chart worldcup">
-                
+                <WorldCupBarChart
+                    data={chartData}
+                    country={country}
+                />
             </div>
         </>
     )
